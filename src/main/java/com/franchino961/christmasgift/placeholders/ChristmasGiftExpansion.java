@@ -86,6 +86,21 @@ public class ChristmasGiftExpansion extends PlaceholderExpansion {
             }
         }
 
+        // %christmasgift_total_gifts%
+        if (params.equalsIgnoreCase("total_gifts")) {
+            return String.valueOf(plugin.getDataManager().getTotalGifts());
+        }
+
+        // %christmasgift_claimed_gifts%
+        if (params.equalsIgnoreCase("claimed_gifts")) {
+            return String.valueOf(plugin.getDataManager().getClaimedGifts());
+        }
+
+        // %christmasgift_unclaimed_gifts%
+        if (params.equalsIgnoreCase("unclaimed_gifts")) {
+            return String.valueOf(plugin.getDataManager().getUnclaimedGifts());
+        }
+
         return null;
     }
 
