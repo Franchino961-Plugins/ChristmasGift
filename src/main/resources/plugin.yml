@@ -17,8 +17,12 @@ permissions:
   christmasgift.use:
     description: Allows using basic commands
     default: true
+  christmasgift.claim:
+    description: Allows claiming gift blocks
+    default: true
   christmasgift.admin:
     description: Allows using admin commands
     default: op
     children:
       christmasgift.use: true
+      christmasgift.claim: true
