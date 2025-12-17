@@ -14,7 +14,8 @@
 - **💾 Persistenza Dati**: Salvataggio automatico in `data.yml`
 - **🏆 Statistiche Giocatore**: Ogni player può vedere quanti regali ha trovato
 - **🔄 Sostituzione Blocchi**: Configura cosa succede dopo che un regalo viene raccolto
-- **📝 Messaggi Personalizzabili**: Tutti i messaggi sono configurabili in `messages.yml`
+- **📝 Messaggi Personalizzabili**: Tutti i messaggi sono configurabili in `lang.yml`
+- **🌍 Supporto Multi-Lingua**: Traduzioni in italiano e inglese incluse
 - **🔌 PlaceholderAPI Integration**: Supporto per placeholder opzionale
 - **⚙️ Comandi Completi**: Gestione admin con comandi intuitivi
 - **🎯 Tab Completion**: Autocompletamento comandi per facilità d'uso
@@ -25,7 +26,7 @@
 2. **Inseriscilo nella cartella `plugins/`** del tuo server
 3. **(Opzionale)** Installa PlaceholderAPI per i placeholder
 4. **Avvia/riavvia il server**
-5. **Configura** `config.yml` e `messages.yml` nella cartella `plugins/ChristmasGift/`
+5. **Configura** `config.yml` e `lang.yml` nella cartella `plugins/ChristmasGift/`
 6. **Imposta una texture** personalizzata (vedi sotto)
 7. Usa `/cg give` per ottenere blocchi regalo
 
@@ -99,17 +100,28 @@ gift-block:
     type: AIR                          # Blocco sostitutivo (AIR per rimuoverlo)
 ```
 
-### messages.yml
+### lang.yml
 
-Tutti i messaggi del plugin sono personalizzabili:
+Il plugin supporta più lingue. Attualmente incluse:
+- 🇺🇸 Inglese (`en_us`)
+- 🇮🇹 Italiano (`it_it`)
+
+Puoi selezionare la lingua nel file `config.yml` con l'opzione `language: en_us` o `language: it_it`. Tutti i messaggi sono personalizzabili nel file `lang.yml`.
 
 ```yaml
-prefix: "&c[ChristmasGift] &r"
-gift-claimed: "&aHai trovato un regalo!"
-gift-already-claimed: "&cQuesto regalo è già stato raccolto!"
-no-permission: "&cNon hai il permesso per fare questo!"
-stats-message: "&aHai trovato &e{found}&a regali!"
-# ...altri messaggi...
+en_us:
+  prefix: "&c&l[ChristmasGift]&r "
+  gift-claimed: "&a&lCongratulations! &aYou found a Christmas Gift! Total found: &e{found}"
+  already-claimed: "&cThis gift has already been claimed by someone else!"
+  no-permission: "&cYou don't have permission to do that!"
+  # ...altri messaggi...
+
+it_it:
+  prefix: "&c&l[ChristmasGift]&r "
+  gift-claimed: "&a&lComplimenti! &aHai trovato un Regalo di Natale! Totale trovati: &e{found}"
+  already-claimed: "&cQuesto regalo è già stato raccolto da qualcun altro!"
+  no-permission: "&cNon hai il permesso per fare questo!"
+  # ...altri messaggi...
 ```
 
 ## 🔌 PlaceholderAPI (Opzionale)
@@ -191,7 +203,7 @@ ChristmasGift (Main Class)
     │
     ├─► ConfigManager      → Gestisce config.yml e creazione blocchi
     │
-    ├─► MessagesManager    → Gestisce messages.yml e formattazione
+    ├─► MessagesManager    → Gestisce lang.yml e formattazione (i18n)
     │
     ├─► DataManager        → Gestisce data.yml e statistiche
     │       ├─► HashMap<Location, GiftBlock>
@@ -349,7 +361,7 @@ ChristmasGift/
 │       │               │   └── ChristmasGiftCommand.java   # Gestione comandi e tab completion
 │       │               ├── config/
 │       │               │   ├── ConfigManager.java          # Gestione config.yml e texture
-│       │               │   └── MessagesManager.java        # Gestione messages.yml
+│       │               │   └── MessagesManager.java        # Gestione lang.yml (i18n)
 │       │               ├── data/
 │       │               │   ├── DataManager.java            # Persistenza dati e statistiche
 │       │               │   └── GiftBlock.java              # Classe modello per blocchi regalo
@@ -360,7 +372,7 @@ ChristmasGift/
 │       └── resources/
 │           ├── plugin.yml     # Configurazione plugin, comandi e permessi
 │           ├── config.yml     # Configurazione blocchi regalo
-│           └── messages.yml   # Messaggi personalizzabili
+│           └── lang.yml       # Traduzioni (en_us, it_it)
 ├── target/
 │   └── ChristmasGift-1.0.0.jar  # JAR compilato
 ├── pom.xml                      # Configurazione Maven
@@ -520,7 +532,7 @@ rcon-cli "broadcast §aNuova settimana, nuova caccia ai regali!"
 /lp group vip permission set christmasgift.claim true
 
 # Messaggi personalizzati
-# In messages.yml
+# In lang.yml (sezione della tua lingua)
 no-permission: "&c&lAccesso Negato! &7Solo i membri &6VIP &7possono partecipare all'evento Natalizio!"
 ```
 
@@ -661,9 +673,9 @@ Sentiti libero di controllare la [pagina delle issues](../../issues).
   - Funziona su Spigot/Paper 1.20+
 - 📝 **Configurazione completa**
   - `config.yml` per impostazioni blocchi regalo
-  - `messages.yml` per messaggi personalizzabili
+  - `lang.yml` per traduzioni (en_us, it_it)
   - Supporto colori con `&`
-  - Supporto multilingua
+  - Sistema multi-lingua (inglese e italiano)
 - 🏗️ **Architettura modulare**
   - ConfigManager per gestione configurazione
   - MessagesManager per messaggi
