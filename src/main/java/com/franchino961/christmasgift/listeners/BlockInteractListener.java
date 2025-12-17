@@ -31,13 +31,13 @@ public class BlockInteractListener implements Listener {
         if (isGiftBlock(item)) {
             if (!player.hasPermission("christmasgift.admin")) {
                 event.setCancelled(true);
-                player.sendMessage(plugin.getMessagesManager().getMessage("messages.no-permission"));
+                player.sendMessage(plugin.getMessagesManager().getMessage("no-permission"));
                 return;
             }
             
             Location location = event.getBlock().getLocation();
             plugin.getDataManager().addGiftBlock(location);
-            player.sendMessage(plugin.getMessagesManager().getMessage("messages.gift-placed"));
+            player.sendMessage(plugin.getMessagesManager().getMessage("gift-placed"));
         }
     }
 
@@ -53,7 +53,7 @@ public class BlockInteractListener implements Listener {
             
             Player player = event.getPlayer();
             if (player.hasPermission("christmasgift.admin")) {
-                player.sendMessage(plugin.getMessagesManager().getMessage("messages.gift-removed"));
+                player.sendMessage(plugin.getMessagesManager().getMessage("gift-removed"));
             }
         }
     }
@@ -90,13 +90,13 @@ public class BlockInteractListener implements Listener {
         }
 
         if (giftBlock.isClaimed()) {
-            player.sendMessage(plugin.getMessagesManager().getMessage("messages.already-claimed"));
+            player.sendMessage(plugin.getMessagesManager().getMessage("already-claimed"));
             return;
         }
 
         // Check if player has permission to claim gifts
         if (!player.hasPermission("christmasgift.claim")) {
-            player.sendMessage(plugin.getMessagesManager().getMessage("messages.no-permission"));
+            player.sendMessage(plugin.getMessagesManager().getMessage("no-permission"));
             return;
         }
 
@@ -106,7 +106,7 @@ public class BlockInteractListener implements Listener {
         // Get stats
         int totalFound = plugin.getDataManager().getPlayerStats(player.getUniqueId());
         
-        player.sendMessage(plugin.getMessagesManager().getMessage("messages.gift-claimed",
+        player.sendMessage(plugin.getMessagesManager().getMessage("gift-claimed",
             "{found}", String.valueOf(totalFound)));
 
         // Handle block replacement
@@ -126,3 +126,4 @@ public class BlockInteractListener implements Listener {
         return itemDisplayName != null && itemDisplayName.equals(displayName.replace("&", "§"));
     }
 }
+
