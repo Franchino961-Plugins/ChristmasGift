@@ -51,7 +51,7 @@ public class ChristmasGiftCommand implements CommandExecutor, TabCompleter {
             case "reload":
                 return handleReload(sender);
             default:
-                sender.sendMessage(plugin.getMessagesManager().getMessage("messages.unknown-command"));
+                sender.sendMessage(plugin.getMessagesManager().getMessage("unknown-command"));
                 return true;
         }
     }
@@ -73,26 +73,26 @@ public class ChristmasGiftCommand implements CommandExecutor, TabCompleter {
 
     private boolean handleGive(CommandSender sender) {
         if (!sender.hasPermission("christmasgift.admin")) {
-            sender.sendMessage(plugin.getMessagesManager().getMessage("messages.no-permission"));
+            sender.sendMessage(plugin.getMessagesManager().getMessage("no-permission"));
             return true;
         }
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage(plugin.getMessagesManager().getMessage("messages.player-only"));
+            sender.sendMessage(plugin.getMessagesManager().getMessage("player-only"));
             return true;
         }
 
         Player player = (Player) sender;
         ItemStack giftBlock = plugin.getConfigManager().createGiftBlock();
         player.getInventory().addItem(giftBlock);
-        sender.sendMessage(plugin.getMessagesManager().getMessage("messages.gift-received"));
+        sender.sendMessage(plugin.getMessagesManager().getMessage("gift-received"));
         
         return true;
     }
 
     private boolean handleStats(CommandSender sender) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage(plugin.getMessagesManager().getMessage("messages.player-only"));
+            sender.sendMessage(plugin.getMessagesManager().getMessage("player-only"));
             return true;
         }
 
@@ -100,12 +100,12 @@ public class ChristmasGiftCommand implements CommandExecutor, TabCompleter {
         int found = plugin.getDataManager().getPlayerStats(player.getUniqueId());
         int rank = plugin.getDataManager().getPlayerRank(player.getUniqueId());
         
-        sender.sendMessage(plugin.getMessagesManager().getMessage("messages.stats-header"));
-        sender.sendMessage(plugin.getMessagesManager().getMessage("messages.stats-found", 
+        sender.sendMessage(plugin.getMessagesManager().getMessage("stats-header"));
+        sender.sendMessage(plugin.getMessagesManager().getMessage("stats-found", 
             "{found}", String.valueOf(found)));
         
         if (rank != -1) {
-            sender.sendMessage(plugin.getMessagesManager().getMessage("messages.stats-rank", 
+            sender.sendMessage(plugin.getMessagesManager().getMessage("stats-rank", 
                 "{rank}", String.valueOf(rank)));
         }
         
@@ -114,16 +114,16 @@ public class ChristmasGiftCommand implements CommandExecutor, TabCompleter {
 
     private boolean handleLeaderboard(CommandSender sender) {
         if (!sender.hasPermission("christmasgift.admin")) {
-            sender.sendMessage(plugin.getMessagesManager().getMessage("messages.no-permission"));
+            sender.sendMessage(plugin.getMessagesManager().getMessage("no-permission"));
             return true;
         }
 
         List<Map.Entry<UUID, Integer>> leaderboard = plugin.getDataManager().getLeaderboard();
         
-        sender.sendMessage(plugin.getMessagesManager().getMessage("messages.leaderboard-header"));
+        sender.sendMessage(plugin.getMessagesManager().getMessage("leaderboard-header"));
         
         if (leaderboard.isEmpty()) {
-            sender.sendMessage(plugin.getMessagesManager().getMessage("messages.leaderboard-empty"));
+            sender.sendMessage(plugin.getMessagesManager().getMessage("leaderboard-empty"));
             return true;
         }
 
@@ -134,7 +134,7 @@ public class ChristmasGiftCommand implements CommandExecutor, TabCompleter {
             OfflinePlayer player = Bukkit.getOfflinePlayer(entry.getKey());
             String playerName = player.getName() != null ? player.getName() : "Unknown";
             
-            sender.sendMessage(plugin.getMessagesManager().getMessage("messages.leaderboard-entry",
+            sender.sendMessage(plugin.getMessagesManager().getMessage("leaderboard-entry",
                 "{position}", String.valueOf(position),
                 "{player}", playerName,
                 "{found}", String.valueOf(entry.getValue())));
@@ -147,12 +147,12 @@ public class ChristmasGiftCommand implements CommandExecutor, TabCompleter {
 
     private boolean handleRemove(CommandSender sender, String[] args) {
         if (!sender.hasPermission("christmasgift.admin")) {
-            sender.sendMessage(plugin.getMessagesManager().getMessage("messages.no-permission"));
+            sender.sendMessage(plugin.getMessagesManager().getMessage("no-permission"));
             return true;
         }
 
         if (args.length < 4) {
-            sender.sendMessage(plugin.getMessagesManager().getMessage("messages.remove-usage"));
+            sender.sendMessage(plugin.getMessagesManager().getMessage("remove-usage"));
             return true;
         }
 
@@ -171,15 +171,15 @@ public class ChristmasGiftCommand implements CommandExecutor, TabCompleter {
             }
             
             if (targetLocation == null) {
-                sender.sendMessage(plugin.getMessagesManager().getMessage("messages.gift-not-found"));
+                sender.sendMessage(plugin.getMessagesManager().getMessage("gift-not-found"));
                 return true;
             }
             
             plugin.getDataManager().removeGiftBlock(targetLocation);
-            sender.sendMessage(plugin.getMessagesManager().getMessage("messages.gift-removed"));
+            sender.sendMessage(plugin.getMessagesManager().getMessage("gift-removed"));
             
         } catch (NumberFormatException e) {
-            sender.sendMessage(plugin.getMessagesManager().getMessage("messages.invalid-coordinates"));
+            sender.sendMessage(plugin.getMessagesManager().getMessage("invalid-coordinates"));
         }
         
         return true;
@@ -187,13 +187,13 @@ public class ChristmasGiftCommand implements CommandExecutor, TabCompleter {
 
     private boolean handleRemoveAll(CommandSender sender) {
         if (!sender.hasPermission("christmasgift.admin")) {
-            sender.sendMessage(plugin.getMessagesManager().getMessage("messages.no-permission"));
+            sender.sendMessage(plugin.getMessagesManager().getMessage("no-permission"));
             return true;
         }
 
         int count = plugin.getDataManager().getGiftBlocks().size();
         plugin.getDataManager().removeAllGiftBlocks();
-        sender.sendMessage(plugin.getMessagesManager().getMessage("messages.all-gifts-removed",
+        sender.sendMessage(plugin.getMessagesManager().getMessage("all-gifts-removed",
             "{count}", String.valueOf(count)));
         
         return true;
@@ -201,12 +201,12 @@ public class ChristmasGiftCommand implements CommandExecutor, TabCompleter {
 
     private boolean handleReset(CommandSender sender, String[] args) {
         if (!sender.hasPermission("christmasgift.admin")) {
-            sender.sendMessage(plugin.getMessagesManager().getMessage("messages.no-permission"));
+            sender.sendMessage(plugin.getMessagesManager().getMessage("no-permission"));
             return true;
         }
 
         if (args.length < 2) {
-            sender.sendMessage(plugin.getMessagesManager().getMessage("messages.reset-usage"));
+            sender.sendMessage(plugin.getMessagesManager().getMessage("reset-usage"));
             return true;
         }
 
@@ -214,7 +214,7 @@ public class ChristmasGiftCommand implements CommandExecutor, TabCompleter {
         OfflinePlayer target = Bukkit.getOfflinePlayer(playerName);
         
         if (!target.hasPlayedBefore() && !target.isOnline()) {
-            sender.sendMessage(plugin.getMessagesManager().getMessage("messages.player-not-found",
+            sender.sendMessage(plugin.getMessagesManager().getMessage("player-not-found",
                 "{player}", playerName));
             return true;
         }
@@ -222,7 +222,7 @@ public class ChristmasGiftCommand implements CommandExecutor, TabCompleter {
         int previousStats = plugin.getDataManager().getPlayerStats(target.getUniqueId());
         plugin.getDataManager().resetPlayerStats(target.getUniqueId());
         
-        sender.sendMessage(plugin.getMessagesManager().getMessage("messages.player-reset",
+        sender.sendMessage(plugin.getMessagesManager().getMessage("player-reset",
             "{player}", target.getName(),
             "{count}", String.valueOf(previousStats)));
         
@@ -231,14 +231,14 @@ public class ChristmasGiftCommand implements CommandExecutor, TabCompleter {
 
     private boolean handleResetAll(CommandSender sender) {
         if (!sender.hasPermission("christmasgift.admin")) {
-            sender.sendMessage(plugin.getMessagesManager().getMessage("messages.no-permission"));
+            sender.sendMessage(plugin.getMessagesManager().getMessage("no-permission"));
             return true;
         }
 
         int totalPlayers = plugin.getDataManager().getPlayerStats().size();
         plugin.getDataManager().resetAllPlayerStats();
         
-        sender.sendMessage(plugin.getMessagesManager().getMessage("messages.all-stats-reset",
+        sender.sendMessage(plugin.getMessagesManager().getMessage("all-stats-reset",
             "{count}", String.valueOf(totalPlayers)));
         
         return true;
@@ -246,7 +246,7 @@ public class ChristmasGiftCommand implements CommandExecutor, TabCompleter {
 
     private boolean handleReload(CommandSender sender) {
         if (!sender.hasPermission("christmasgift.admin")) {
-            sender.sendMessage(plugin.getMessagesManager().getMessage("messages.no-permission"));
+            sender.sendMessage(plugin.getMessagesManager().getMessage("no-permission"));
             return true;
         }
 
@@ -254,7 +254,7 @@ public class ChristmasGiftCommand implements CommandExecutor, TabCompleter {
         plugin.getMessagesManager().reloadMessages();
         plugin.getDataManager().loadData();
         
-        sender.sendMessage(plugin.getMessagesManager().getMessage("messages.config-reloaded"));
+        sender.sendMessage(plugin.getMessagesManager().getMessage("config-reloaded"));
         return true;
     }
 
@@ -306,3 +306,4 @@ public class ChristmasGiftCommand implements CommandExecutor, TabCompleter {
         return completions;
     }
 }
+
