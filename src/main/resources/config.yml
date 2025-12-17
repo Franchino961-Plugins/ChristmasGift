@@ -1,5 +1,9 @@
 # ChristmasGift Configuration File
 
+# Language setting - Available: en_us, it_it
+# Messages are defined in lang.yml
+language: en_us
+
 # Gift Block Configuration
 gift-block:
   # Type of block to use (e.g., DIAMOND_BLOCK, PLAYER_HEAD, etc.)
