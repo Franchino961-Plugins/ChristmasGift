@@ -1,0 +1,78 @@
+# ChristmasGift Language File
+# Supported Languages: en_us (English), it_it (Italian)
+
+en_us:
+  # General messages
+  prefix: "&c&l[ChristmasGift]&r "
+  no-permission: "&cYou don't have permission to do that!"
+  player-only: "&cThis command can only be used by players!"
+  unknown-command: "&cUnknown command! Use /christmasgift for help."
+  config-reloaded: "&aConfiguration reloaded successfully!"
+  
+  # Gift block messages
+  gift-received: "&aYou received a Christmas Gift block! Place it somewhere for players to find."
+  gift-placed: "&aChristmas Gift block placed successfully!"
+  gift-removed: "&aChristmas Gift block removed successfully!"
+  all-gifts-removed: "&aRemoved {count} Christmas Gift blocks!"
+  gift-not-found: "&cNo gift block found at those coordinates!"
+  cannot-break: "&cYou cannot break a Christmas Gift block!"
+  
+  # Claim messages
+  gift-claimed: "&a&lCongratulations! &aYou found a Christmas Gift! Total found: &e{found}"
+  already-claimed: "&cThis gift has already been claimed by someone else!"
+  
+  # Stats messages
+  stats-header: "&6&l=== Your Christmas Gift Stats ==="
+  stats-found: "&eGifts found: &a{found}"
+  stats-rank: "&eYour rank: &a#{rank}"
+  
+  # Leaderboard messages
+  leaderboard-header: "&6&l=== Christmas Gift Leaderboard ==="
+  leaderboard-empty: "&eNo one has found any gifts yet!"
+  leaderboard-entry: "&e#{position} &7- &a{player} &7- &e{found} gifts"
+  
+  # Command usage messages
+  remove-usage: "&cUsage: /christmasgift remove <x> <y> <z>"
+  invalid-coordinates: "&cInvalid coordinates! Please use numbers."
+  reset-usage: "&cUsage: /christmasgift reset <player>"
+  player-not-found: "&cPlayer '{player}' not found!"
+  player-reset: "&aReset stats for player &e{player}&a. Previous gifts found: &e{count}"
+  all-stats-reset: "&aReset stats for all players! Total players affected: &e{count}"
+
+it_it:
+  # Messaggi generali
+  prefix: "&c&l[ChristmasGift]&r "
+  no-permission: "&cNon hai il permesso per fare questo!"
+  player-only: "&cQuesto comando può essere usato solo dai giocatori!"
+  unknown-command: "&cComando sconosciuto! Usa /christmasgift per aiuto."
+  config-reloaded: "&aConfigurazione ricaricata con successo!"
+  
+  # Messaggi blocco regalo
+  gift-received: "&aHai ricevuto un blocco Regalo di Natale! Piazzalo da qualche parte per i giocatori."
+  gift-placed: "&aBlocco Regalo di Natale piazzato con successo!"
+  gift-removed: "&aBlocco Regalo di Natale rimosso con successo!"
+  all-gifts-removed: "&aRimossi {count} blocchi Regalo di Natale!"
+  gift-not-found: "&cNessun blocco regalo trovato a quelle coordinate!"
+  cannot-break: "&cNon puoi rompere un blocco Regalo di Natale!"
+  
+  # Messaggi raccolta
+  gift-claimed: "&a&lComplimenti! &aHai trovato un Regalo di Natale! Totale trovati: &e{found}"
+  already-claimed: "&cQuesto regalo è già stato raccolto da qualcun altro!"
+  
+  # Messaggi statistiche
+  stats-header: "&6&l=== Le Tue Statistiche Regalo di Natale ==="
+  stats-found: "&eRegali trovati: &a{found}"
+  stats-rank: "&eLa tua posizione: &a#{rank}"
+  
+  # Messaggi classifica
+  leaderboard-header: "&6&l=== Classifica Regalo di Natale ==="
+  leaderboard-empty: "&eNessuno ha ancora trovato regali!"
+  leaderboard-entry: "&e#{position} &7- &a{player} &7- &e{found} regali"
+  
+  # Messaggi uso comandi
+  remove-usage: "&cUso: /christmasgift remove <x> <y> <z>"
+  invalid-coordinates: "&cCoordinate non valide! Usa numeri."
+  reset-usage: "&cUso: /christmasgift reset <giocatore>"
+  player-not-found: "&cGiocatore '{player}' non trovato!"
+  player-reset: "&aReset statistiche per il giocatore &e{player}&a. Regali trovati prima: &e{count}"
+  all-stats-reset: "&aReset statistiche per tutti i giocatori! Giocatori interessati: &e{count}"
