@@ -10,38 +10,54 @@ import java.io.IOException;
 public class MessagesManager {
 
     private final ChristmasGift plugin;
-    private File messagesFile;
-    private FileConfiguration messagesConfig;
+    private File langFile;
+    private FileConfiguration langConfig;
+    private String language;
 
     public MessagesManager(ChristmasGift plugin) {
         this.plugin = plugin;
     }
 
     public void loadMessages() {
-        messagesFile = new File(plugin.getDataFolder(), "messages.yml");
+        langFile = new File(plugin.getDataFolder(), "lang.yml");
         
-        if (!messagesFile.exists()) {
-            plugin.saveResource("messages.yml", false);
+        if (!langFile.exists()) {
+            plugin.saveResource("lang.yml", false);
         }
         
-        messagesConfig = YamlConfiguration.loadConfiguration(messagesFile);
+        langConfig = YamlConfiguration.loadConfiguration(langFile);
+        language = plugin.getConfig().getString("language", "en_us");
+        
+        // Validate language exists in lang.yml
+        if (!langConfig.contains(language)) {
+            plugin.getLogger().warning("Language '" + language + "' not found in lang.yml! Defaulting to en_us");
+            language = "en_us";
+        }
     }
 
     public void reloadMessages() {
-        messagesConfig = YamlConfiguration.loadConfiguration(messagesFile);
+        langConfig = YamlConfiguration.loadConfiguration(langFile);
+        language = plugin.getConfig().getString("language", "en_us");
+        
+        // Validate language exists in lang.yml
+        if (!langConfig.contains(language)) {
+            plugin.getLogger().warning("Language '" + language + "' not found in lang.yml! Defaulting to en_us");
+            language = "en_us";
+        }
     }
 
     public void saveMessages() {
         try {
-            messagesConfig.save(messagesFile);
+            langConfig.save(langFile);
         } catch (IOException e) {
-            plugin.getLogger().severe("Could not save messages.yml!");
+            plugin.getLogger().severe("Could not save lang.yml!");
             e.printStackTrace();
         }
     }
 
     public String getMessage(String path) {
-        String message = messagesConfig.getString(path, "Message not found: " + path);
+        String fullPath = language + "." + path;
+        String message = langConfig.getString(fullPath, "Message not found: " + path);
         return formatColor(message);
     }
 
@@ -59,7 +75,11 @@ public class MessagesManager {
         return text.replace("&", "§");
     }
 
-    public FileConfiguration getMessagesConfig() {
-        return messagesConfig;
+    public FileConfiguration getLangConfig() {
+        return langConfig;
+    }
+    
+    public String getLanguage() {
+        return language;
     }
 }
