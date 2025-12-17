@@ -1,6 +1,6 @@
-# ChristmasGift 🎁
+# 🎁 ChristmasGift
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)]()
+[![Version](https://img.shields.io/badge/version-1.3.0-blue.svg)]()
 [![Minecraft](https://img.shields.io/badge/minecraft-1.20+-green.svg)](https://www.minecraft.net/)
 [![License](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 
