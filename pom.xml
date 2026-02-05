@@ -6,7 +6,7 @@
 
     <groupId>com.franchino961</groupId>
     <artifactId>ChristmasGift</artifactId>
-    <version>1.3.0</version>
+    <version>1.4.0</version>
     <packaging>jar</packaging>
 
     <name>ChristmasGift</name>
@@ -28,11 +28,6 @@
         <repository>
             <id>placeholderapi</id>
             <url>https://repo.extendedclip.com/releases/</url>
-        </repository>
-        <!-- Jitpack for HeadDatabase -->
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
         </repository>
     </repositories>
 
