@@ -6,9 +6,9 @@
 [![Spigot](https://img.shields.io/badge/Spigot-1.20+-orange.svg)](https://www.spigotmc.org/)
 
 [![en](https://img.shields.io/badge/lang-en-red.svg)](README.md)
-[![it](https://img.shields.io/badge/lang-it-green.svg)](MD/README.it.md)
+[![it](https://img.shields.io/badge/lang-it-green.svg)](Docs/README.it.md)
 
-> 📝 [Changelog](MD/CHANGELOG.en.md)
+> 📝 [Changelog](Docs/CHANGELOG.en.md)
 
 **ChristmasGift** is a Minecraft plugin for Spigot/Paper that allows you to create a Christmas treasure hunt with hidden gift blocks in the world. Players can search for and collect gifts to compete on the global leaderboard!
 
@@ -382,7 +382,7 @@ For bug reports, feature requests, or questions:
 
 ## 📝 Changelog
 
-See [CHANGELOG.en.md](MD/CHANGELOG.en.md) for complete version history.
+See [CHANGELOG.en.md](Docs/CHANGELOG.en.md) for complete version history.
 
 ---
 
