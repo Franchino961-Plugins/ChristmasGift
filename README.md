@@ -3,87 +3,99 @@
 [![Version](https://img.shields.io/badge/version-1.4.0-blue.svg)]()
 [![Minecraft](https://img.shields.io/badge/minecraft-1.20+-green.svg)](https://www.minecraft.net/)
 [![License](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
+[![Spigot](https://img.shields.io/badge/Spigot-1.20+-orange.svg)](https://www.spigotmc.org/)
 
-**ChristmasGift** è un plugin Minecraft per Spigot/Paper che permette di creare una caccia al tesoro natalizia con blocchi regalo nascosti nel mondo. I giocatori possono cercare e raccogliere i regali per competere nella classifica globale!
+[![en](https://img.shields.io/badge/lang-en-red.svg)](README.md)
+[![it](https://img.shields.io/badge/lang-it-green.svg)](MD/README.it.md)
 
-## 📋 Caratteristiche
+> 📝 [Changelog](MD/CHANGELOG.en.md)
 
-- **🎁 Blocchi Regalo Personalizzabili**: Usa blocchi normali o teste con texture Base64 custom
-- **🎨 Texture da minecraft-heads.com**: Aggiungi texture personalizzate senza plugin aggiuntivi
-- **📊 Sistema di Classifica**: Traccia quali giocatori hanno trovato più regali
-- **💾 Persistenza Dati**: Salvataggio automatico in `data.yml` con gestione errori robusta
-- **🏆 Statistiche Giocatore**: Ogni player può vedere quanti regali ha trovato e il proprio rank
-- **🔄 Sostituzione Blocchi**: Configura cosa succede dopo che un regalo viene raccolto
-- **📝 Messaggi Personalizzabili**: Tutti i messaggi sono configurabili in `lang.yml`
-- **🌍 Supporto Multi-Lingua**: Traduzioni in italiano e inglese incluse
-- **🔌 PlaceholderAPI Integration**: Supporto per placeholder opzionale
-- **⚙️ Comandi Completi**: Gestione admin con comandi intuitivi
-- **🎯 Tab Completion**: Autocompletamento comandi per facilità d'uso
-- **🛡️ Gestione Errori Robusta**: Nessun crash per world mancanti o dati corrotti (v1.4.0)
-- **📚 Codice Documentato**: JavaDoc completo per sviluppatori (v1.4.0)
+**ChristmasGift** is a Minecraft plugin for Spigot/Paper that allows you to create a Christmas treasure hunt with hidden gift blocks in the world. Players can search for and collect gifts to compete on the global leaderboard!
 
-## 🚀 Installazione
+## 📋 Features
 
-1. Scarica il file `.jar` del plugin
-2. Inserisci il file `.jar` nella cartella `plugins` del tuo server
-3. **(Opzionale)** Installa PlaceholderAPI per i placeholder
-4. Riavvia o ricarica il tuo server
-5. I file di configurazione verranno generati automaticamente in `plugins/ChristmasGift/`
-6. Configura `config.yml` e `lang.yml` secondo le tue preferenze
-7. Imposta una texture personalizzata (vedi sotto)
-8. Usa `/cg give` per ottenere blocchi regalo
+- **🎁 Customisable Gift Blocks**: Use normal blocks or player heads with custom Base64 textures
+- **🎨 Textures from minecraft-heads.com**: Add custom textures without additional plugins
+- **📊 Leaderboard System**: Track which players have found the most gifts
+- **💾 Data Persistence**: Automatic saving to `data.yml` with robust error handling
+- **🏆 Player Statistics**: Each player can see how many gifts they've found and their rank
+- **🔄 Block Replacement**: Configure what happens after a gift is collected
+- **📝 Customisable Messages**: All messages are configurable in `lang.yml`
+- **🌍 Multi-Language Support**: Italian and English translations included
+- **🔌 PlaceholderAPI Integration**: Optional placeholder support
+- **⚙️ Complete Commands**: Admin management with intuitive commands
+- **🎯 Tab Completion**: Command auto-completion for ease of use
+- **🛡️ Robust Error Handling**: No crashes for missing worlds or corrupted data (v1.4.0)
+- **📚 Documented Code**: Full JavaDoc for developers (v1.4.0)
 
-## 📖 Utilizzo
+## 📦 Requirements
 
-### Comandi
+- **Server**: Spigot/Paper 1.20+
+- **Java**: 17+
+- **Optional dependencies**: PlaceholderAPI
 
-| Comando | Descrizione | Permesso | Alias |
-|---------|-------------|----------|-------|
-| `/cg give` | Ottieni un blocco regalo | `christmasgift.admin` | `/gift give`, `/christmasgift give` |
-| `/cg stats` | Mostra le tue statistiche | `christmasgift.use` | `/gift stats`, `/christmasgift stats` |
-| `/cg leaderboard` | Mostra la classifica globale (top 10) | `christmasgift.admin` | `/cg lb`, `/gift lb` |
-| `/cg remove <x> <y> <z>` | Rimuovi un blocco regalo specifico | `christmasgift.admin` | `/gift remove` |
-| `/cg removeall` | Rimuovi tutti i blocchi regalo | `christmasgift.admin` | `/gift removeall` |
-| `/cg reset <player>` | Reset statistiche di un giocatore | `christmasgift.admin` | `/gift reset` |
-| `/cg resetall` | Reset di tutte le statistiche | `christmasgift.admin` | `/gift resetall` |
-| `/cg reload` | Ricarica la configurazione | `christmasgift.admin` | `/gift reload` |
+## 🚀 Installation
 
-**Alias principali:** `/cg`, `/gift`, `/christmasgift`
+1. Download the plugin `.jar` file
+2. Place the `.jar` file in your server's `plugins` folder
+3. **(Optional)** Install PlaceholderAPI for placeholders
+4. Restart or reload your server
+5. Configuration files will be automatically generated in `plugins/ChristmasGift/`
+6. Configure `config.yml` and `lang.yml` according to your preferences
+7. Set up a custom texture (see below)
+8. Use `/cg give` to get gift blocks
 
-### Permessi
+## 📖 Usage
 
-| Permesso | Descrizione | Default |
-|----------|-------------|---------|
-| `christmasgift.use` | Permette di usare i comandi base | Tutti |
-| `christmasgift.claim` | Permette di raccogliere i blocchi regalo | Tutti |
-| `christmasgift.admin` | Permette di usare i comandi admin | OP |
+### Commands
 
-### Come Usare
+| Command | Description | Permission | Alias |
+|---------|-------------|------------|-------|
+| `/cg give` | Get a gift block | `christmasgift.admin` | `/gift give`, `/christmasgift give` |
+| `/cg stats` | Show your statistics | `christmasgift.use` | `/gift stats`, `/christmasgift stats` |
+| `/cg leaderboard` | Show the global leaderboard (top 10) | `christmasgift.admin` | `/cg lb`, `/gift lb` |
+| `/cg remove <x> <y> <z>` | Remove a specific gift block | `christmasgift.admin` | `/gift remove` |
+| `/cg removeall` | Remove all gift blocks | `christmasgift.admin` | `/gift removeall` |
+| `/cg reset <player>` | Reset a player's statistics | `christmasgift.admin` | `/gift reset` |
+| `/cg resetall` | Reset all statistics | `christmasgift.admin` | `/gift resetall` |
+| `/cg reload` | Reload configuration | `christmasgift.admin` | `/gift reload` |
 
-1. **Ottenere Blocchi Regalo**: Usa `/cg give` (richiede permesso admin)
-2. **Piazzare i Regali**: Piazza i blocchi regalo nel mondo come decorazioni nascoste
-3. **Raccogliere Regali**: I giocatori cliccano destro sui blocchi per raccoglierli
-4. **Vedere Statistiche**: Usa `/cg stats` per vedere quanti regali hai trovato
-5. **Classifica**: Gli admin possono vedere la top 10 con `/cg leaderboard`
+**Main aliases:** `/cg`, `/gift`, `/christmasgift`
 
-## 🎨 Texture Personalizzate
+### Permissions
 
-### Come Usare Texture Custom da minecraft-heads.com
+| Permission | Description | Default |
+|------------|-------------|---------|
+| `christmasgift.use` | Allows using basic commands | Everyone |
+| `christmasgift.claim` | Allows collecting gift blocks | Everyone |
+| `christmasgift.admin` | Allows using admin commands | OP |
 
-Il plugin supporta **texture Base64** per le teste dei blocchi regalo senza bisogno di plugin esterni!
+### How to Use
 
-### Passaggi per Aggiungere Texture:
+1. **Get Gift Blocks**: Use `/cg give` (requires admin permission)
+2. **Place Gifts**: Place gift blocks in the world as hidden decorations
+3. **Collect Gifts**: Players right-click blocks to collect them
+4. **View Statistics**: Use `/cg stats` to see how many gifts you've found
+5. **Leaderboard**: Admins can view the top 10 with `/cg leaderboard`
 
-1. **Trova una testa su minecraft-heads.com:**
-   - Vai su https://minecraft-heads.com/
-   - Cerca la categoria che ti interessa (es. "Christmas", "Gifts")
-   - Clicca sulla testa che vuoi
+## 🎨 Custom Textures
 
-2. **Copia il Value:**
-   - Clicca su "Value" (non Minecraft URL!)
-   - Copia la stringa Base64 (esempio: `eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6...`)
+### How to Use Custom Textures from minecraft-heads.com
 
-3. **Incolla nel config.yml:**
+The plugin supports **Base64 textures** for gift block heads without needing external plugins!
+
+### Steps to Add Textures:
+
+1. **Find a head on minecraft-heads.com:**
+   - Go to https://minecraft-heads.com/
+   - Search for the category you want (e.g. "Christmas", "Gifts")
+   - Click on the head you want
+
+2. **Copy the Value:**
+   - Click on "Value" (not Minecraft URL!)
+   - Copy the Base64 string (example: `eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6...`)
+
+3. **Paste into config.yml:**
    ```yaml
    gift-block:
      type: PLAYER_HEAD
@@ -91,117 +103,117 @@ Il plugin supporta **texture Base64** per le teste dei blocchi regalo senza biso
      head-texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDFjYTMxMWFmYTlhOTBmYzBmZmFkYWQzMGNkZTA5NGI4M2RmYTQxNjRkZGM0ZjhmZTA5MzUxZDlhYzQ5YzY4MyJ9fX0="
    ```
 
-4. **Riavvia o usa `/cg reload`**
+4. **Restart or use `/cg reload`**
 
-✨ **Funziona immediatamente senza plugin aggiuntivi!**
+✨ **Works immediately without additional plugins!**
 
-### Texture Consigliate
+### Recommended Textures
 
-Alcune texture natalizie popolari da minecraft-heads.com:
-- 🎁 **Regalo Rosso**: Cerca "Red Present"
-- 🎄 **Albero di Natale**: Cerca "Christmas Tree"
-- ⛄ **Pupazzo di Neve**: Cerca "Snowman"
-- 🔔 **Campana**: Cerca "Bell"
-- 🎅 **Babbo Natale**: Cerca "Santa"
+Some popular Christmas textures from minecraft-heads.com:
+- 🎁 **Red Present**: Search "Red Present"
+- 🎄 **Christmas Tree**: Search "Christmas Tree"
+- ⛄ **Snowman**: Search "Snowman"
+- 🔔 **Bell**: Search "Bell"
+- 🎅 **Santa**: Search "Santa"
 
-## ⚙️ Configurazione
+## ⚙️ Configuration
 
 ### config.yml
 
 ```yaml
-# Configurazione Blocco Regalo
+# Gift Block Configuration
 gift-block:
-  # Tipo di blocco (PLAYER_HEAD per teste custom, o qualsiasi Material valido)
+  # Block type (PLAYER_HEAD for custom heads, or any valid Material)
   type: PLAYER_HEAD
   
-  # Nome visualizzato del blocco regalo
-  display-name: "&c&l🎁 &a&lRegalo di Natale &c&l🎁"
+  # Display name of gift block
+  display-name: "&c&l🎁 &a&lChristmas Gift &c&l🎁"
   
-  # Texture Base64 da minecraft-heads.com (solo per PLAYER_HEAD)
-  # Esempio: Regalo rosso con fiocco
+  # Base64 texture from minecraft-heads.com (only for PLAYER_HEAD)
+  # Example: Red present with bow
   head-texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDFjYTMxMWFmYTlhOTBmYzBmZmFkYWQzMGNkZTA5NGI4M2RmYTQxNjRkZGM0ZjhmZTA5MzUxZDlhYzQ5YzY4MyJ9fX0="
   
-  # Sostituisci il blocco dopo che viene raccolto
+  # Replace block after it's claimed
   replace-after-claim: true
   
-  # Blocco sostitutivo (AIR per rimuoverlo completamente)
+  # Replacement block (AIR to remove completely)
   replacement-block:
     type: AIR
 
-# Lingua (en_us o it_it)
-language: it_it
+# Language (en_us or it_it)
+language: en_us
 ```
 
 ### lang.yml
 
-Tutti i messaggi del plugin sono completamente personalizzabili. Esempio:
+All plugin messages are fully customisable. Example:
 
 ```yaml
-# Messaggi in Italiano
-it_it:
-  prefix: "&8[&c&lChristmasGift&8] &r"
-  
-  # Messaggi Regalo
-  gift-claimed: "&aHai trovato un regalo! &7(&e{found}&7 totali)"
-  already-claimed: "&cQuesto regalo è già stato raccolto!"
-  gift-placed: "&aRegalo piazzato con successo!"
-  gift-removed: "&cRegalo rimosso!"
-  
-  # Statistiche
-  stats-header: "&6&l=== Le Tue Statistiche ==="
-  stats-found: "&eRegali trovati: &a{found}"
-  stats-rank: "&eClassifica: &a#{rank}"
-  
-  # Classifica
-  leaderboard-header: "&6&l=== Top 10 Giocatori ==="
-  leaderboard-entry: "&e#{position} &7- &f{player} &7(&a{found} regali&7)"
-  leaderboard-empty: "&cNessun giocatore ha ancora trovato regali!"
-  
-  # Errori
-  no-permission: "&cNon hai il permesso per fare questo!"
-  player-only: "&cQuesto comando può essere usato solo da un giocatore!"
-  player-not-found: "&cGiocatore {player} non trovato!"
-  gift-not-found: "&cNessun regalo trovato a queste coordinate!"
-  invalid-coordinates: "&cCoordinate non valide!"
-  
-  # Admin
-  all-gifts-removed: "&aRimossi {count} blocchi regalo!"
-  player-reset: "&aStatistiche di {player} resettate! &7({count} regali)"
-  all-stats-reset: "&aStatistiche di {count} giocatori resettate!"
-  config-reloaded: "&aConfigurazione ricaricata con successo!"
-  remove-usage: "&cUso: /cg remove <x> <y> <z>"
-  reset-usage: "&cUso: /cg reset <player>"
-  unknown-command: "&cComando sconosciuto! Usa /cg per vedere i comandi disponibili."
-
 # English Messages
 en_us:
   prefix: "&8[&c&lChristmasGift&8] &r"
+  
+  # Gift Messages
   gift-claimed: "&aYou found a gift! &7(&e{found}&7 total)"
   already-claimed: "&cThis gift has already been claimed!"
-  # ... (stessa struttura dell'italiano)
+  gift-placed: "&aGift placed successfully!"
+  gift-removed: "&cGift removed!"
+  
+  # Statistics
+  stats-header: "&6&l=== Your Statistics ==="
+  stats-found: "&eGifts found: &a{found}"
+  stats-rank: "&eRank: &a#{rank}"
+  
+  # Leaderboard
+  leaderboard-header: "&6&l=== Top 10 Players ==="
+  leaderboard-entry: "&e#{position} &7- &f{player} &7(&a{found} gifts&7)"
+  leaderboard-empty: "&cNo players have found gifts yet!"
+  
+  # Errors
+  no-permission: "&cYou don't have permission to do this!"
+  player-only: "&cThis command can only be used by a player!"
+  player-not-found: "&cPlayer {player} not found!"
+  gift-not-found: "&cNo gift found at these coordinates!"
+  invalid-coordinates: "&cInvalid coordinates!"
+  
+  # Admin
+  all-gifts-removed: "&aRemoved {count} gift blocks!"
+  player-reset: "&aReset {player}'s statistics! &7({count} gifts)"
+  all-stats-reset: "&aReset statistics for {count} players!"
+  config-reloaded: "&aConfiguration reloaded successfully!"
+  remove-usage: "&cUsage: /cg remove <x> <y> <z>"
+  reset-usage: "&cUsage: /cg reset <player>"
+  unknown-command: "&cUnknown command! Use /cg to see available commands."
+
+# Italian Messages
+it_it:
+  prefix: "&8[&c&lChristmasGift&8] &r"
+  gift-claimed: "&aHai trovato un regalo! &7(&e{found}&7 totali)"
+  already-claimed: "&cQuesto regalo è già stato raccolto!"
+  # ... (same structure as English)
 ```
 
 ## 🔌 PlaceholderAPI
 
-Se hai PlaceholderAPI installato, puoi usare questi placeholder:
+If you have PlaceholderAPI installed, you can use these placeholders:
 
-| Placeholder | Descrizione | Esempio Output |
+| Placeholder | Description | Example Output |
 |-------------|-------------|----------------|
-| `%christmasgift_found%` | Numero di regali trovati dal giocatore | `5` |
-| `%christmasgift_rank%` | Posizione in classifica | `3` |
-| `%christmasgift_total_gifts%` | Numero totale di regali nel mondo | `20` |
-| `%christmasgift_claimed_gifts%` | Numero di regali già raccolti | `12` |
-| `%christmasgift_unclaimed_gifts%` | Numero di regali ancora da trovare | `8` |
-| `%christmasgift_top_<position>_name%` | Nome del giocatore in posizione X | `Notch` |
-| `%christmasgift_top_<position>_found%` | Regali trovati dal giocatore in posizione X | `15` |
+| `%christmasgift_found%` | Number of gifts found by the player | `5` |
+| `%christmasgift_rank%` | Leaderboard position | `3` |
+| `%christmasgift_total_gifts%` | Total number of gifts in the world | `20` |
+| `%christmasgift_claimed_gifts%` | Number of gifts already collected | `12` |
+| `%christmasgift_unclaimed_gifts%` | Number of gifts still to find | `8` |
+| `%christmasgift_top_<position>_name%` | Name of player at position X | `Notch` |
+| `%christmasgift_top_<position>_found%` | Gifts found by player at position X | `15` |
 
-**Esempio di utilizzo in scoreboard:**
+**Example usage in scoreboard:**
 ```yaml
 # In DeluxeMenus, ScoreboardAPI, etc.
 lines:
   - "&6&lChristmas Event"
-  - "&eRegali trovati: &a%christmasgift_found%"
-  - "&eClassifica: &a#%christmasgift_rank%"
+  - "&eGifts found: &a%christmasgift_found%"
+  - "&eRank: &a#%christmasgift_rank%"
   - ""
   - "&6&lTop 3:"
   - "&e1. &f%christmasgift_top_1_name% &7(%christmasgift_top_1_found%)"
@@ -209,14 +221,14 @@ lines:
   - "&e3. &f%christmasgift_top_3_name% &7(%christmasgift_top_3_found%)"
 ```
 
-## 📊 Gestione Dati
+## 📊 Data Management
 
 ### data.yml
 
-Il plugin salva automaticamente tutti i dati in `plugins/ChristmasGift/data.yml`:
+The plugin automatically saves all data in `plugins/ChristmasGift/data.yml`:
 
 ```yaml
-# Blocchi Regalo Piazzati
+# Placed Gift Blocks
 gift-blocks:
   0:
     world: world
@@ -233,21 +245,21 @@ gift-blocks:
     claimed: true
     claimed-by: "069a79f4-44e9-4726-a5be-fca90e38aaf5"
 
-# Statistiche Giocatori
+# Player Statistics
 player-stats:
   "069a79f4-44e9-4726-a5be-fca90e38aaf5": 5
   "f84c6a79-0a4e-45e7-879b-cd49ebd4c4e2": 3
 ```
 
-### Backup e Sicurezza (v1.4.0)
+### Backup and Safety (v1.4.0)
 
-Il plugin ora include gestione errori robusta:
-- ✅ **Nessun crash** se un world viene eliminato o rinominato
-- ✅ **Validazione automatica** dei dati al caricamento
-- ✅ **Logging dettagliato** per troubleshooting
-- ✅ **Skip automatico** di blocchi regalo in world non esistenti
+The plugin now includes robust error handling:
+- ✅ **No crashes** if a world is deleted or renamed
+- ✅ **Automatic validation** of data on load
+- ✅ **Detailed logging** for troubleshooting
+- ✅ **Automatic skip** of gift blocks in non-existent worlds
 
-**Esempio log al caricamento:**
+**Example log on startup:**
 ```
 [ChristmasGift] Created new data.yml file
 [ChristmasGift] Loaded 15 gift blocks (skipped 2 invalid)
@@ -256,138 +268,122 @@ Il plugin ora include gestione errori robusta:
 [ChristmasGift] ChristmasGift v1.4.0 enabled successfully!
 ```
 
-## 🎯 Esempi di Utilizzo
+## 🎯 Usage Examples
 
-### Scenario 1: Evento Natalizio
+### Scenario 1: Christmas Event
 
-1. **Setup Iniziale:**
+1. **Initial Setup:**
    ```
    /cg give Admin 50
    ```
    
-2. **Nascondi i Regali:**
-   - Piazza 50 blocchi regalo in giro per il mondo
-   - Nascondili in luoghi creativi (alberi, case, grotte, ecc.)
+2. **Hide the Gifts:**
+   - Place 50 gift blocks around the world
+   - Hide them in creative places (trees, houses, caves, etc.)
 
-3. **Annuncia l'Evento:**
+3. **Announce the Event:**
    ```
-   /broadcast §6§l🎄 EVENTO NATALIZIO! 🎄
-   /broadcast §eTrova i 50 regali nascosti nel mondo!
-   /broadcast §eUsa /cg stats per vedere i tuoi progressi!
-   ```
-
-4. **Monitora i Progressi:**
-   ```
-   /cg leaderboard  # Vedi chi sta vincendo
+   /broadcast §6§l🎄 CHRISTMAS EVENT! 🎄
+   /broadcast §eFind the 50 hidden gifts in the world!
+   /broadcast §eUse /cg stats to see your progress!
    ```
 
-5. **Premia i Vincitori:**
-   - Controlla la classifica finale
-   - Premia i top 3 giocatori
+4. **Monitor Progress:**
+   ```
+   /cg leaderboard  # See who's winning
+   ```
 
-### Scenario 2: Caccia al Tesoro Quotidiana
+5. **Reward the Winners:**
+   - Check the final leaderboard
+   - Reward the top 3 players
 
-1. **Nascondi 5 Regali al Giorno:**
+### Scenario 2: Daily Treasure Hunt
+
+1. **Hide 5 Gifts Each Day:**
    ```
    /cg give Admin 5
    ```
 
-2. **Resetta le Statistiche Ogni Settimana:**
+2. **Reset Statistics Every Week:**
    ```
    /cg resetall
    ```
 
-3. **Usa Placeholder in Scoreboard:**
-   - Mostra i progressi in tempo reale
-   - Crea competizione tra giocatori
+3. **Use Placeholders in Scoreboard:**
+   - Show progress in real-time
+   - Create competition between players
 
-## 🔧 Risoluzione Problemi
+## 🔧 Troubleshooting
 
-### Il blocco regalo non funziona
+### Gift block doesn't work
 
-**Problema:** Cliccando destro sul blocco non succede nulla
+**Problem:** Right-clicking the block does nothing
 
-**Soluzioni:**
-1. Verifica di avere il permesso `christmasgift.claim`
-2. Controlla che il blocco sia effettivamente un regalo (usa `/cg list` se admin)
-3. Verifica che non sia già stato raccolto
+**Solutions:**
+1. Verify you have the `christmasgift.claim` permission
+2. Check that the block is actually a gift (use `/cg list` if admin)
+3. Verify it hasn't already been collected
 
-### La texture non si carica
+### Texture doesn't load
 
-**Problema:** La testa appare come testa di Steve
+**Problem:** Head appears as Steve's head
 
-**Soluzioni:**
-1. Verifica di aver copiato il **Value** (non l'URL) da minecraft-heads.com
-2. Controlla che la stringa Base64 sia completa (nessun carattere mancante)
-3. Assicurati che `type: PLAYER_HEAD` sia impostato
-4. Usa `/cg reload` dopo aver modificato il config
+**Solutions:**
+1. Verify you copied the **Value** (not the URL) from minecraft-heads.com
+2. Check that the Base64 string is complete (no missing characters)
+3. Ensure `type: PLAYER_HEAD` is set
+4. Use `/cg reload` after modifying config
 
-### Errore "World non trovato"
+### "World not found" error
 
-**Problema (v1.3.0 e precedenti):** Plugin crashava se un world veniva eliminato
+**Problem (v1.3.0 and earlier):** Plugin crashed if a world was deleted
 
-**Soluzione (v1.4.0+):** 
-- ✅ Problema risolto! Il plugin ora skippa automaticamente blocchi in world non esistenti
-- Controlla i log per vedere quali blocchi sono stati skippati
-- Rimuovi manualmente le entry da `data.yml` se necessario
+**Solution (v1.4.0+):** 
+- ✅ Problem solved! Plugin now automatically skips blocks in non-existent worlds
+- Check logs to see which blocks were skipped
+- Manually remove entries from `data.yml` if needed
 
-### Statistiche non salvate
+### Statistics not saved
 
-**Problema:** Le statistiche si resettano al riavvio
+**Problem:** Statistics reset on restart
 
-**Soluzioni:**
-1. Verifica che `data.yml` esista in `plugins/ChristmasGift/`
-2. Controlla i permessi del file (deve essere scrivibile)
-3. Controlla i log per errori di salvataggio
-4. Usa `/cg reload` per forzare un salvataggio
+**Solutions:**
+1. Verify that `data.yml` exists in `plugins/ChristmasGift/`
+2. Check file permissions (must be writable)
+3. Check logs for save errors
+4. Use `/cg reload` to force a save
 
-## 📈 Changelog
+## 📄 License
 
-### v1.4.0 (Febbraio 2026)
-**🛡️ Bug Fixes Critici:**
-- ✅ Risolto NPE quando un blocco regalo è in un world non esistente
-- ✅ Risolto NPE su ConfigurationSection null
-- ✅ Risolto crash su UUID invalidi in data.yml
+This project is released under the **MIT** license — see the [LICENSE](LICENSE) file for details.
 
-**📚 Miglioramenti Codice:**
-- ✅ Aggiunto JavaDoc completo su tutte le classi principali
-- ✅ Migliorata gestione errori con try-catch in onEnable()
-- ✅ Logging dettagliato con contatori (loaded/skipped)
-- ✅ Validazione automatica dati al caricamento
+## 👤 Author
 
-**🔧 Ottimizzazioni:**
-- ✅ Rimosso repository Jitpack non utilizzato da pom.xml
-- ✅ Migliorati messaggi di log per troubleshooting
+**Franchino961** — [GitHub](https://github.com/Franchino961-Plugins)
 
-### v1.3.0
-- Aggiunto supporto per texture Base64 custom
-- Migliorato sistema di messaggi
-- Aggiunte traduzioni italiano/inglese
+## 🤝 Contributing
 
-### v1.2.0
-- Aggiunta integrazione PlaceholderAPI
-- Implementato sistema di classifica
-- Aggiunti comandi admin avanzati
+Contributions are welcome! Feel free to:
+- 🐛 Report bugs in [issues](../../issues)
+- 💡 Propose new features
+- 🔧 Submit Pull Requests
 
-### v1.1.0
-- Primo rilascio pubblico
-- Sistema base di blocchi regalo
-- Comandi e permessi fondamentali
+## 💬 Support
 
-## 🤝 Supporto
+For bug reports, feature requests, or questions:
+- Open an [issue](../../issues) on GitHub
+- Contact the developer
 
-Per bug report, richieste di funzionalità o domande:
-- Apri una issue su GitHub
-- Contatta lo sviluppatore
+## 🔗 Useful Links
 
-## 📜 Licenza
+- 🎁 [SpigotMC](https://www.spigotmc.org/)
+- 📚 [Spigot API Documentation](https://hub.spigotmc.org/javadocs/spigot/)
+- 🔌 [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) — Optional dependency
 
-Questo plugin è rilasciato sotto licenza MIT. Vedi il file LICENSE per i dettagli.
+## 📝 Changelog
 
-## 👨‍💻 Sviluppatore
-
-Sviluppato da **Franchino961**
+See [CHANGELOG.en.md](MD/CHANGELOG.en.md) for complete version history.
 
 ---
 
-**Buon divertimento con la tua caccia al tesoro natalizia! 🎁🎄**
+**Enjoy your Christmas treasure hunt!**
