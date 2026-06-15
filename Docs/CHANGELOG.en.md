@@ -1,64 +1,78 @@
-# Changelog
+# Changelog - ChristmasGift
 
-All notable changes to this project will be documented in this file.
+All notable changes to the **ChristmasGift** plugin will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-## [1.4.0] - 2026-02-01
-
-### Fixed
-- NPE when a gift block exists in a non-existent world
-- NPE on null `ConfigurationSection`
-- Crash caused by invalid UUIDs in `data.yml`
-
-### Improved
-- Full JavaDoc added to all main classes
-- Enhanced error handling with try-catch in `onEnable()`
-- Detailed logging with counters (loaded/skipped)
-- Automatic data validation on load
-- Removed unused Jitpack repository from `pom.xml`
-- Improved log messages for troubleshooting
-
-## [1.3.0]
-
-### Added
-- Support for custom Base64 textures
-- Improved message system
-- Italian/English translations
-
-## [1.2.0]
-
-### Added
-- PlaceholderAPI integration
-- Leaderboard system
-- Advanced admin commands
-
-## [1.1.0]
-
-### Added
-- First public release
-- Base gift block system
-- Core commands and permissions
-
-## [Unreleased]
-
-### Planned
-- Additional language support
-- GUI for gift configuration
-- Per-world settings
 
 ---
 
-## Version History
+## [1.4.0] - 2026-02-01
 
-### How to Read Version Numbers
-- **Major.Minor.Patch** (e.g., 1.4.0)
-  - **Major**: Breaking changes or major feature additions
-  - **Minor**: New features, backward compatible
-  - **Patch**: Bug fixes and small improvements
+### Added
+- **JavaDoc**: Full JavaDoc added to all main classes.
 
-[1.4.0]: https://github.com/franchino961/christmasgift/releases/tag/v1.4.0
-[1.3.0]: https://github.com/franchino961/christmasgift/releases/tag/v1.3.0
-[1.2.0]: https://github.com/franchino961/christmasgift/releases/tag/v1.2.0
-[1.1.0]: https://github.com/franchino961/christmasgift/releases/tag/v1.1.0
+### Changed
+- **Error Handling**: Enhanced error handling with try-catch in `onEnable()`.
+- **Logging**: Detailed logging with counters (loaded/skipped).
+- **Validation**: Automatic data validation on load.
+- **Build**: Removed unused Jitpack repository from `pom.xml`.
+- **Logging**: Improved log messages for troubleshooting.
+
+### Fixed
+- **NPE**: Fixed NPE when a gift block exists in a non-existent world.
+- **NPE**: Fixed NPE on null `ConfigurationSection`.
+- **Crash**: Fixed crash caused by invalid UUIDs in `data.yml`.
+
+---
+
+## [1.3.0] - 2026-01-15
+
+### Added
+- **Custom Textures**: Support for custom Base64 textures.
+- **Message System**: Improved message system.
+- **Localization**: Italian/English translations.
+
+---
+
+## [1.2.0] - 2026-01-05
+
+### Added
+- **PlaceholderAPI**: PlaceholderAPI integration.
+- **Leaderboard**: Leaderboard system.
+- **Admin Commands**: Advanced admin commands.
+
+---
+
+## [1.1.0] - 2026-01-01
+
+### Added
+- **Initial Release**: First public release.
+- **Gift Block System**: Base gift block system.
+- **Commands**: Core commands and permissions.
+
+---
+
+## Development Roadmap
+
+### Phase 1 - Initial Release ✅
+- Base gift block system.
+- Core commands and permissions.
+
+### Phase 2 - Integrations ✅
+- PlaceholderAPI integration.
+- Leaderboard system.
+
+### Phase 3 - Advanced Features ✅
+- Custom Base64 textures.
+- Multilingual support.
+
+### Phase 4 - Expansion 📋
+- Additional language support.
+- GUI for gift configuration.
+- Per-world settings.
+
+---
+
+*Format: [Version] - Date*
+*Categories: Added, Changed, Fixed, Removed*
