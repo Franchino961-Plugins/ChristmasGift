@@ -211,6 +211,7 @@ public class ChristmasGiftCommand implements CommandExecutor, TabCompleter {
         }
 
         String playerName = args[1];
+        @SuppressWarnings("deprecation")
         OfflinePlayer target = Bukkit.getOfflinePlayer(playerName);
         
         if (!target.hasPlayedBefore() && !target.isOnline()) {
